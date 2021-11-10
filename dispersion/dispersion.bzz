@@ -14,7 +14,7 @@ function lj_vector(rid, data) {
 function lj_magnitude(dist, target, epsilon) {
   return -(epsilon / dist) * ((target / dist)^4 - (target / dist)^2)
 }
- 
+
 # Accumulator of neighbor LJ interactions
 function lj_sum(rid, data, accum) {
   return math.vec2.add(data, accum)
@@ -38,7 +38,10 @@ function init() {
 function step() {
   disperse()
 }
- 
+
+function reset() {
+}
+
 # Execute at exit
 function destroy() {
 }
