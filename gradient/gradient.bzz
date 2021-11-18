@@ -60,5 +60,8 @@ function step() {
   iteration = iteration + 1
 }
 
+function reset() {
+}
+
 function destroy() {
 }
