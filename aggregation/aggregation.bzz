@@ -6,11 +6,14 @@ function aggregate() {
   # neighbors.foreach applies the function to all robots within distance of each other 
   neighbors.foreach(function(rid ,data) {
     degrees = rtod(data.azimuth)
-    if(degrees < 2  and degrees > (-2)) {  # Checks if any robot is within -2 degrees and 2 degrees of vision
+    if(degrees < 25  and degrees > (-25)) {  # Checks if any robot is within -25 degrees and 25 degrees of vision
       set_wheels(10.0, -10.0) # Sets the velocity of the wheels
     }
+		else if (degrees > 25){
+      set_wheels(4.0, 10.0) # Sets the velocity of the wheels if no robot is in range of vision
+    }
     else {
-      set_wheels(7.0, 10.0) # Sets the velocity of the wheels if no robot is in range of vision
+      set_wheels(10.0, 4.0) # Sets the velocity of the wheels if no robot is in range of vision
     }
   })
 }
